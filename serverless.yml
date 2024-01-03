@@ -3,6 +3,23 @@ app: freelanceapp
 
 frameworkVersion: "3"
 
+plugins:
+  - serverless-add-api-key
+
+custom:
+  apiKeys:
+    - name: dev-free-account
+    - value: "your-custom-api-key-goes-here-chico-see-ya-then" # a 20 character long random string
+      usagePlan:
+        name: "Free Plan"
+        description: "Free plan only allows limited requests per day"
+        quota:
+          limit: 3
+          period: DAY
+        throttle:
+          burstLimit: 100 # burst limit is the number of requests that API Gateway allows to be executed at once
+          rateLimit: 20 # rate limit is the number of requests per second that API Gateway allows to be executed
+
 provider:
   name: aws
   runtime: nodejs18.x
