@@ -10,6 +10,7 @@ provider:
   memorySize: 300
   timeout: 120
   architecture: x86_64
+  region: eu-north-1
   stackTags:
     product: sojin-team
     env: qa
@@ -18,11 +19,10 @@ provider:
     created-date: 2024-01-03
     team: data
     customer-impact: false
-    terraform: false
 
 functions:
   hello:
-    handler: handler.hello
+    handler: src/handler.hello
     events:
       - http:
           path: /hello
