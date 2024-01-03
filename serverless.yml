@@ -10,6 +10,9 @@ provider:
   timeout: 120
   architecture: x86_64
   region: eu-north-1
+  apiGateway:
+    apiKeys:
+      - user1
   stackTags:
     product: sojin-team
     env: qa
@@ -25,3 +28,4 @@ functions:
       - http:
           path: /hello
           method: post
+          private: true
