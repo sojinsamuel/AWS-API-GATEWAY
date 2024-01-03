@@ -12,7 +12,8 @@ provider:
   region: eu-north-1
   apiGateway:
     apiKeys:
-      - user1
+      - name: "user1"
+      - value: "your-custom-api-key-goes-here-chico-see-ya-then" # a 20 character long random string
   stackTags:
     product: sojin-team
     env: qa
