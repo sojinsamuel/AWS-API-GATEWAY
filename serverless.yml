@@ -1,0 +1,29 @@
+service: aws-js-api
+app: freelanceapp
+org: mycompanyname
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  memorySize: 300
+  timeout: 120
+  architecture: x86_64
+  stackTags:
+    product: sojin-team
+    env: qa
+    customer-impact: false
+    terraform: false
+    created-date: 2024-01-03
+    team: data
+    customer-impact: false
+    terraform: false
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: /hello
+          method: post
