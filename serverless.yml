@@ -14,7 +14,6 @@ provider:
   stackTags:
     product: sojin-team
     env: qa
-    customer-impact: false
     terraform: false
     created-date: 2024-01-03
     team: data
